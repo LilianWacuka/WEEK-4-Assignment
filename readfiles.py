@@ -21,20 +21,24 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}")
 
-    # reading the file
-    try:
-        with open(inputfilepath, "r") as file:
-         additional_content = file.read()
-        print("Content of the file:")
-        print(additional_content)
-    except Exception as e:
-            print(f"Can't be read: {e}")
-## Reading the output file
-try:
-    with open(outputfilepath, "r") as outputfile:
-        modified_content = outputfile.read()
-        print("Content of the output file:")
-        print(modified_content)
-except Exception as e:
-    print(f"An error occurred while reading the output file: {e}")
+
+    # user input for file
+def read_file():
+        filename = input("input the file to read:")
+        try:
+            with open(filename, "r")as file:
+                content = file.read()
+                print("\ncontent of the file:\n")
+                print(content)
+        except Exception as e:
+            print(f"an error occured: {e}")
+        except FileNotFoundError:
+            print(f"❌ Error: The file '{filename}' was not found.")
+        except Exception as e:
+            print(f"⚠️ An error occurred: {e}")
+
+            # calling the function
+read_file()
+
+        
 
