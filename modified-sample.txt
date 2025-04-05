@@ -1,0 +1,1 @@
+Learning Python is fun!. It is a versatile language. Python is widely used in web development, data science, and more.
